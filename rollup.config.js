@@ -1,5 +1,6 @@
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import nodeResolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 const config = {
   input: './index.es.js',
@@ -14,7 +15,8 @@ const config = {
     }),
     nodeResolve({
       browser: true
-    })
+    }),
+    commonjs()
   ]
 };
 
